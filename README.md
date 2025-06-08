@@ -8,18 +8,19 @@ This repository contains a **Jenkins Shared Library** used to define and reuse C
 
 ```#!groovy
 
-// declaring a function
-def  decidePipeline(Map configMap) {
-     type = configMap.get("type")
-     switch(type) {
-        case "nodejsEKS":
-            nodejsEKS(configMap)
-            break
-        case "nodejsVM":
-            nodejsVM(configMap)
-            break
-        default:
-            error "type is not found"
-            break
-    }
+@Library('jenkins-shared-library') _
+
+// create variable of map type and set the values
+
+def configMap = [
+    type: "nodejsEKS"
+    component: "backend",
+    project: "expense"
+]
+
+if ( ! env.BRANCH_NAME.equalsIgnoreCase('main')){
+    pipelineDecission.decidePipeline(configMap)
+}
+else{
+    echo "Proceed with CR or Non-Prod pipeline"
 }
