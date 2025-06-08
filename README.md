@@ -1,6 +1,6 @@
-# 🧩 Jenkins Shared Library for EKS CI/CD
+# 🧩 Jenkins Shared Library for EKS/VM CI/CD
 
-This repository contains a **Jenkins Shared Library** used to define and reuse CI/CD pipeline logic across multiple Jenkins jobs. It's specifically designed to manage production-grade deployments to **AWS EKS** using `prodEKSPipeline(configMap)`.
+This repository contains a **Jenkins Shared Library** used to define and reuse CI/CD pipeline logic across multiple Jenkins jobs. It's specifically designed to manage production-grade deployments to **AWS EKS and VM** using `prodEKSPipeline(configMap)`.
  
 ## 🚀 How to Use in Jenkinsfile
 
